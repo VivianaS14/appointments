@@ -1,0 +1,27 @@
+<%= form_with model: room do | form | %>
+    <% if room.errors.any? %>
+        <p style="color: red"> <%= pluralize(room.errors.count, "error")%> </p>
+        
+        <ul>
+            <% room.errors.each do | error | %>
+                <li style="color: red">
+                    <%= error.full_message %>
+                </li>
+            <% end %>
+        </ul>
+    <% end %>
+
+    <div>
+        <%= form.label :name %>
+        <%= form.text_field :name %>
+    </div>
+
+    <div>
+        <%= form.label :capacity %>
+        <%= form.number_field :capacity %>
+    </div>
+
+    <div>
+        <%= form.submit "Submit", disable_with: 'Submiting...' %>
+    </div>
+<% end %>

@@ -1,0 +1,4 @@
+<h3>Edit Room</h3>
+
+<%= render "form", room: @room %>
+<%= button_to "Delete", @room, method: :delete, data: { confirm: "Are you sure?" } %>

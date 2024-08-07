@@ -1,0 +1,13 @@
+<%= stylesheet_link_tag "rooms" %>
+
+<div class="container">
+    <% @rooms.each do | room | %>
+        <%= link_to room, style: 'text-decoration: none;' do %>
+            <div class="card">
+                <div class="card-top">
+                    <span class="card-title">Room: <%= room.name %></span>
+                </div>
+            </div>
+        <% end %>
+    <% end %>
+</div>

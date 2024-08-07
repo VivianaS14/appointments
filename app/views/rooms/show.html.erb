@@ -1,0 +1,27 @@
+<%= stylesheet_link_tag "rooms" %>
+
+<div class="card">
+  <div class="card-content">
+    <div class="card-top">
+      <span class="card-title">Room:</span>
+      <div><%= link_to "Edit", edit_room_path %></div>
+    </div>
+    <div class="card-bottom">
+      <p>Capacity:</p>
+      <p><%= @room.capacity %></p>
+    </div>
+  </div>
+  <div class="card-image">
+    <h3 style="color: #303030"><%= @room.name %></h3>
+  </div>
+</div>
+<div class="card-bottom">
+  <%= button_to "Delete", @room, method: :delete, data: { confirm: "Are you sure?" } %>
+</div>
+
+<% @room.bookings.each do | booking | %>
+  <p>Booking:</p>
+  <p>Purpose: <%= booking.purpose %> </p>
+  <p>Start: <%= booking.start %> </p>
+  <p>End: <%= booking.end %> </p>
+<% end %>

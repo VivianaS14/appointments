@@ -1,0 +1,14 @@
+<% stylesheet_link_tag 'booking' %>
+
+<p>Booking:</p>
+
+<div class="notification">
+    <div class="notiglow"></div>
+    <div class="notiborderglow"></div>
+    <div class="notititle"><%= @booking.room.name %></div>
+    <div class="notibody"><%= @booking.purpose %></div>
+    <div class="notibody"><%= @booking.start %></div>
+    <div class="notibody"><%= @booking.end %></div>
+</div>
+
+<%= button_to "Destroy Booking", @booking, method: :delete %>

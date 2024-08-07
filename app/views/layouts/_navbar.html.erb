@@ -1,0 +1,28 @@
+<div class="header">
+    <%= link_to "Available Rooms", rooms_path, class: "h3", style: "text-decoration: none;" %>
+    <%= link_to "Booking", bookings_path, class: "h3", style: "text-decoration: none;" %>
+
+    <% unless current_page?(new_room_path) %>
+        <button class="button">
+            <div class="text">
+                <%= link_to "Add Room", new_room_path %>
+            </div>
+        </button>
+    <% end %>
+
+    <% unless current_page?(new_booking_path) %>
+        <button class="button">
+            <div class="text">
+                <%= link_to "New Booking", new_booking_path %>
+            </div>
+        </button>
+    <% end %>
+</div>
+
+<style>
+    .h3 {
+        font-size: 1.5em;
+        text-decoration: none;
+        color: #fff;
+    }
+</style>

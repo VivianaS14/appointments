@@ -1,0 +1,14 @@
+<% stylesheet_link_tag 'booking' %>
+
+<% @bookings.each do | booking | %>
+    <%= link_to booking, style: 'text-decoration: none;' do %>
+        <div class="notification">
+            <div class="notiglow"></div>
+            <div class="notiborderglow"></div>
+            <div class="notititle">Room: <%= booking.room.name %></div>
+            <div class="notibody">Purpose: <%= booking.purpose %></div>
+            <div class="notibody"><%= booking.start %></div>
+            <div class="notibody"><%= booking.end %></div>
+        </div>
+    <% end %>
+<% end %>
